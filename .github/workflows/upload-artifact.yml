@@ -3,7 +3,8 @@ name: Output Commit Hash
 on: [pull_request, push]
 
 jobs:
-  main: 
+  main:
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v1
 
