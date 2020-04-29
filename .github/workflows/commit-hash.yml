@@ -7,5 +7,9 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
+      - name: Get Hash
+        id: hash
+        run: echo ::set-output name=HASH::$(git rev-parse --short HEAD)
       - run: echo ${{github.sha}}
       - run: git rev-parse --short HEAD
+      - run: echo ${{steps.hash.outputs.HASH}}
