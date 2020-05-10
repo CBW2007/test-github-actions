@@ -19,5 +19,9 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      - name: pr-number-action
+        id: get-num
+        uses: kkak10/pr-number-action@v1.3
     
       - run: echo ${{github.ref}}
+      - run: echo ${{steps.get-num.outputs.pr}}
