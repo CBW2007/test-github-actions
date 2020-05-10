@@ -25,3 +25,4 @@ jobs:
     
       - run: echo ${{github.ref}}
       - run: echo ${{steps.get-num.outputs.pr}}
+      - run: echo ${{github.event_name}}
